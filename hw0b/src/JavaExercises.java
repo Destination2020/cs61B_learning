@@ -1,12 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class JavaExercises {
 
     /** Returns an array [1, 2, 3, 4, 5, 6] */
     public static int[] makeDice() {
         // TODO: Fill in this function.
-        return null;
+        int[] dice = new int[6];
+        for (int i = 0; i < 6; i++){
+            dice[i] = i + 1;
+        }
+        return dice;
     }
 
     /** Returns the order depending on the customer.
@@ -14,8 +19,17 @@ public class JavaExercises {
      *  If the customer is Erik, return ["sushi", "pasta", "avocado", "coffee"].
      *  In any other case, return an empty String[] of size 3. */
     public static String[] takeOrder(String customer) {
-        // TODO: Fill in this function.
-        return null;
+        String[] result;
+        if (Objects.equals(customer,"Ergun")){
+            result = new String[] {"beyti","pizza", "hamburger", "tea"};
+        }
+        else if (Objects.equals(customer, "Erik")){
+            result = new String[] {"sushi", "pasta", "avocado", "coffee"};
+        }
+        else{
+            result = new String[3];
+        }
+        return result;
     }
 
     /** Returns the positive difference between the maximum element and minimum element of the given array.
