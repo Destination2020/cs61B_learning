@@ -86,7 +86,7 @@ public class PercolationPicture {
         if (args.length == 1) {
             filename = args[0];
         } else {
-            filename = pickRandomFile();
+            filename = "inputFiles/greeting57.txt";//pickRandomFile();
         }
         System.out.println("Drawing file " + filename);
         simulateFromFile(filename);
