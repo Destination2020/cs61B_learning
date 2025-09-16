@@ -149,7 +149,6 @@ public class TestMaxTileExists {
         };
 
         Model m = new Model(rawVals, 0);
-
         assertWithMessage("One 2048 tile on board\n" + m.getBoard()).that(m.maxTileExists()).isTrue();
     }
 
