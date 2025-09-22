@@ -2,11 +2,17 @@ import jh61b.utils.Reflection;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
+
 /** Performs some basic linked list tests. */
 public class LinkedListDeque61BTest {
+
 
     // @Test
     // /** In this test, we have three different assert statements that verify that addFirst works correctly. */
@@ -57,4 +63,21 @@ public class LinkedListDeque61BTest {
     // }
 
     // Below, you'll write your own tests for LinkedListDeque61B.
+    @Test
+    public void addFirstAndAddLastTest() {
+        Deque61B<Integer> lld = new LinkedListDeque61B<>();
+        lld.addFirst(2);
+        lld.addFirst(1);
+        lld.addLast(3);
+        lld.addLast(4);
+        List<Integer> lldList = lld.toList();
+        List<Integer> lldListCompare = new ArrayList<>(List.of(1, 2, 3, 4));
+
+        assertThat(lldList).containsExactly(1, 2, 3, 4).inOrder();
+        assertWithMessage("LinkedListDeque61B is right").that(lldList.size()).isEqualTo(4);
+
+
+
+
+    }
 }
